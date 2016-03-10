@@ -62,7 +62,6 @@ class Netzarbeiter_CustomerActivation_Helper_Data extends Mage_Core_Helper_Abstr
         $storeId = $this->getCustomerStoreId($customer);
         if (Mage::getStoreConfig(self::XML_PATH_ALERT_ADMIN, $storeId)) {
             $to = $this->_getEmails(self::XML_PATH_EMAIL_ADMIN_NOTIFICATION, $storeId);
-            $storeId = Mage_Core_Model_App::ADMIN_STORE_ID;
             $this->_sendNotificationEmail($to, $customer, self::XML_PATH_EMAIL_ADMIN_NOTIFICATION_TEMPLATE, $storeId);
         }
         return $this;
